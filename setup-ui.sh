@@ -1,24 +1,25 @@
 #!/bin/bash
 set -e
 
-echo "🎨 Deploying Headlamp Landscape (No-Auth Mode)"
+echo "🎡 Installing Official Kubernetes Dashboard (v3)..."
 
-helm repo add headlamp https://kubernetes-sigs.github.io/headlamp/
+helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
 helm repo update
 
-helm upgrade --install headlamp headlamp/headlamp \
-  --namespace headlamp --create-namespace \
-  --set service.type=NodePort \
-  --set service.nodePort=30090 \
-  --set config.noAuth=true
-
-# Grant Permissions: Headlamp uses a ServiceAccount named 'headlamp' by default. Give it cluster-admin so it can edit nodes/pods without logging in.
-kubectl create clusterrolebinding headlamp-admin-binding \
+helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard \
+  --namespace kubernetes-dashboard --create-namespace \
+  --set api.service.type=NodePort \
+  --set api.service.nodePort=30090 \
+  --set api.extraArgs="{--enable-skip-login,--disable-settings-authorizer}" \
+  --set authMode=none
+  
+# Grant Permissions: dashboard-auth account to cluster-admin.
+kubectl create clusterrolebinding dashboard-admin-sa \
   --clusterrole=cluster-admin \
-  --serviceaccount=headlamp:headlamp \
-  --namespace headlamp || true
+  --serviceaccount=kubernetes-dashboard:kubernetes-dashboard-auth || true
 
 echo "------------------------------------------------------------"
-echo "✅ SUCCESS: Headlamp is running."
-echo "🚀 Open the 'Ports' tab and click the link for 9090 for cluster dashboard."
+echo "✅ SUCCESS: Official Dashboard is deployed."
+echo "🌐 Access: Port 9090 (via your Codespaces Ports tab)."
+echo "🚀 Action: On the login screen, simply click the 'SKIP' button."
 echo "------------------------------------------------------------"
