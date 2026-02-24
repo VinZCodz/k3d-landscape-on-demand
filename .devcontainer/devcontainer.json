@@ -1,5 +1,5 @@
 {
-    "name": "K3d Landscape on Demand",
+    "name": "k3d-landscape-on-demand",
     "image": "mcr.microsoft.com/devcontainers/universal:2",
 
     "features": {
@@ -9,11 +9,17 @@
         "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
             "version": "latest",
             "helm": "latest",
-            "minikube": "none" //Turning this k8s flavour off! I'm doing k3d!
+            "minikube": "none" //Turning this k8s flavour off! Coz, I'm doing k3d!
         }
     },
 
-    "forwardPorts": [8080, 9090], //Port 8080 for cluster apps, and 9090 for Headlamp UI.
+    // Install k3d binary.
+    "onCreateCommand": "curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash",
+
+    // Then create the k3d cluster with pre-configurations. I've used my user name, change if needed! 
+    "postCreateCommand": "k3d cluster create vinzcodz-cluster --config k3d-config.yaml",
+
+    "forwardPorts": [8080, 9090], //Port 8080 for cluster apps, and 9090 for UI.
 
     "customizations": {
         "vscode": {
@@ -22,7 +28,5 @@
                 "redhat.vscode-yaml"
             ]
         }
-    },
-
-    "postCreateCommand": "k3d cluster create --config k3d-config.yaml"
+    }
 }
