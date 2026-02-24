@@ -14,8 +14,9 @@ _Boom! Your cluster is ready under 5 min on Port 9090._
 
 _That all!_
 
+<p align="center">
 <img width="509" height="71" alt="image" src="https://github.com/user-attachments/assets/a702adef-e832-4cf7-a77d-b9513a7fcd1a" />
-
+</p>
 
 ## 🎨 Visual Landscape (Headlamp UI)
 
@@ -38,9 +39,9 @@ kubectl create token headlamp-admin -n headlamp
 ## 🛠️ Handy Commands
 
 The default cluster name is ```vinzcodz-cluster``` 
-
-<img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/d9cc74ab-2e72-4bef-8e4b-e28388aea5d0" />
-
+<p align="center">
+  <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/d9cc74ab-2e72-4bef-8e4b-e28388aea5d0" />
+</p>
 Use these to manage your environment:
 
 - Stop Cluster: ```k3d cluster stop <cluster-name>```
@@ -53,8 +54,9 @@ _All other ```kubectl```..._
 
 
 ## 🎯 Why use this?
-
+<p align="center">
 <img width="400" height="39" alt="image" src="https://github.com/user-attachments/assets/4eea9fb7-6a13-4d62-8ad7-58ffbebc3df9" />
+</p>
 
 - Dogfooding: I built this to host my own backend services and experiment.
 
@@ -66,18 +68,18 @@ _All other ```kubectl```..._
 
 - Work in Progress: I haven't added Nginx Load Balancer support yet, but improvements are already underway!
 
+## 🤝 Contribute & Support
+
+Found a bug? Nothing is perfect! Please report it or raise a PR—I’ll review it as soon as possible. If this helped your workflow, feel free to Star ⭐ and Fork 🍴 the repo to show your support!
+
 ---
 
 **Use for Dev | Test | CI/CD Actions | Practice | Basically a throw away cluster after use!**
 
 ---
 
-## 🤝 Contribute & Support
-
-Found a bug? Nothing is perfect! Please report it or raise a PR—I’ll review it as soon as possible. If this helped your workflow, feel free to Star ⭐ and Fork 🍴 the repo to show your support!
+<p align="center">
+<img width="400" height="100" alt="image" src="https://github.com/user-attachments/assets/623c8884-bf88-4bac-9c6a-3410abc6a8d0" />
+</p>
 
 _Go ahead, give it a spin! 🚀_
-
-<img width="400" height="100" alt="image" src="https://github.com/user-attachments/assets/623c8884-bf88-4bac-9c6a-3410abc6a8d0" />
-
-
