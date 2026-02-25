@@ -21,5 +21,7 @@ echo "✅ SUCCESS: Official Dashboard is deployed."
 echo "🚀 UI is launching! Look for Port 9090 in your Ports tab."
 echo "🔑 USE THIS TOKEN TO LOGIN:"
 echo "------------------------------------------------------------"
-kubectl create token headlamp-admin -n headlamp --duration=24h
+kubectl create token headlamp-admin -n headlamp --duration=24h > .cluster-token.txt
+
+cat .cluster-token.txt
 echo "------------------------------------------------------------"
