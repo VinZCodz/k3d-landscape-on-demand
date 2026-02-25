@@ -2,13 +2,9 @@
 
 **Instant 3-node Kubernetes (k3d) cluster inside your GitHub Codespaces.**
 
-Stop wasting time on local setup. A fully functional, multi-node cluster with a pre-configured UI in under 5 minutes. It's a high-performance, "throw-away" landscape optimized for the GitHub free tier.
-
 ## ⚡ Quick Start (The "I'm in a hurry" version)
 
-- Press ```,``` (comma) on this repo to open the Codespace menu.
-
-- Choose the 2-core offering (it’s free and plenty for this setup).
+- Press ```,``` (comma) on this repo --> Choose the 2-core free offering. 
 
 _Boom! Your cluster is ready under 5 min on Port 9090._
 
@@ -17,6 +13,9 @@ _That all!_
 <p align="center">
 <img width="509" height="71" alt="image" src="https://github.com/user-attachments/assets/a702adef-e832-4cf7-a77d-b9513a7fcd1a" />
 </p>
+
+
+Stop wasting time on local setup. A fully functional, multi-node cluster with a pre-configured UI in minutes. Done with your work? "throw-it-away"! Delete the codespace! Done clean, hassle free, optimized for the GitHub free tier.
 
 ## 🎨 Visual Landscape (Headlamp UI)
 
