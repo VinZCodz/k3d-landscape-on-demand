@@ -17,18 +17,22 @@ _That all!_
 
 Stop wasting time on local setup. A fully functional, multi-node cluster with a pre-configured UI in minutes. Done with your work? "throw-it-away"! Delete the codespace! clean, hassle free, optimized for the **GitHub free tier**, standard 2 core offering!
 
+<img width="1000" height="348" alt="image" src="https://github.com/user-attachments/assets/42d92a6f-c914-4294-8a38-773605b065c5" />
+
 ## 🎨 Visual Landscape (Headlamp UI)
 
 No squinting at ```kubectl get pods``` You have a fully integrated Headlamp UI! live.
 
-- Access: Go to the Ports tab in your Codespace and open Port 9090.
-
-  <img width="1000" height="348" alt="image" src="https://github.com/user-attachments/assets/42d92a6f-c914-4294-8a38-773605b065c5" />
-
-- Secure Auth: I've used secure tokens with RBAC. If your token expires or you missed it in the logs, just run:
+- Access: Go to the ```Ports``` tab in your Codespace and click ```Open in Browser 🌐``` at Port 9090.
+  
+  <img width="1000" height="166" alt="image" src="https://github.com/user-attachments/assets/362162b6-4f28-4f90-a2ba-b05bab69a9ab" />
+  (Wait or Refresh for Headlamp UI to configure and load.)
+  
+- Secure Auth: I've used secure tokens with RBAC. Find the UI login token at ```.cluster-token.txt``` in root, valid for 24-hrs. If your token expires or you missed it, just run:
 
 ```
-kubectl create token headlamp-admin -n headlamp
+kubectl create token headlamp-admin -n headlamp --duration=24h > .cluster-token.txt
+cat .cluster-token.txt
 ```
 - Features: Real-time visual cues, built-in pod exec, and cluster-wide insights, packaged offered by Headlamp UI.
   
