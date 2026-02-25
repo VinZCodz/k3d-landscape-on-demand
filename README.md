@@ -4,7 +4,7 @@
 
 ## ⚡ Quick Start
 
-- Press ```,``` (comma) on this repo --> Choose the ```2-core``` free offering. 
+- Press ```,``` (comma) on this repo --> Click ```Create new codespace``` 
 
 _Boom! Your cluster is ready in minutes on Port 9090._
 
@@ -15,7 +15,7 @@ _That all!_
 </p>
 
 
-Stop wasting time on local setup. A fully functional, multi-node cluster with a pre-configured UI in minutes. Done with your work? "throw-it-away"! Delete the codespace! clean, hassle free, optimized for the GitHub free tier.
+Stop wasting time on local setup. A fully functional, multi-node cluster with a pre-configured UI in minutes. Done with your work? "throw-it-away"! Delete the codespace! clean, hassle free, optimized for the **GitHub free tier**, standard 2 core offering!
 
 ## 🎨 Visual Landscape (Headlamp UI)
 
@@ -55,11 +55,11 @@ _Then, regular ```kubectl get nodes``` and all other ```kubectl```..._
 <img width="400" height="39" alt="image" src="https://github.com/user-attachments/assets/4eea9fb7-6a13-4d62-8ad7-58ffbebc3df9" />
 </p>
 
-- Dogfooding: I built this to host my own backend services and experiment.
+- Dogfooding: I built this to host my own backend services and experiments, with 2-Core minimal offering, which is Free tier for any codespace!
 
 - Zero Footprint: Nothing is installed on your laptop. Use it, experiment, and delete the Codespace when done. No security worries, no leftover junk.
 
-- Fully Open: Unlike "black box" solutions, everything here is open-source and extensible via IaC.
+- Fully Open: Unlike "black box" solutions, everything here is open-source and extensible via IaC. Build your infra on top of this! or extend!
 
 - Helm Ready: Native support for Helm charts to deploy your apps instantly, remote!
 
@@ -67,7 +67,9 @@ _Then, regular ```kubectl get nodes``` and all other ```kubectl```..._
 
 ## 🤝 Contribute & Support
 
-Found a bug? Nothing is perfect! Please report it or raise a PR—I’ll review it as soon as possible. If this helped your workflow, feel free to Star ⭐ and Fork 🍴 the repo to show your support!
+Found a bug? Nothing is perfect! Please report it or raise a PR—I’ll review it as soon as possible.
+
+If this helped your workflow, feel free to **Star ⭐ and Fork 🍴** the repo to show your support!
 
 ---
 
