@@ -26,10 +26,6 @@ options:
     timeout: "60s"
     
 files:
-  # Place the Gateway API CRDs
-  - source: https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
-    destination: /var/lib/rancher/k3s/server/manifests/00-gateway-crds.yaml   
-  
   # Inline Traefik v3 Config to enable Gateway API.
   - source: |
       apiVersion: helm.cattle.io/v1
