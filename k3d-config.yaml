@@ -6,8 +6,8 @@ metadata:
 servers: 1 # The Control Plane (API Server, Scheduler, SQLite DB etc.)
 agents: 2  # The Worker Nodes (pods, kubelet)
 
-# Pinning version for stability, change to latest, if needed.
-image: rancher/k3s:v1.30.0-k3s1 
+# Pinning version for stability. With Traefik v3.6+ (with Gateway API enabled)
+image: rancher/k3s:v1.35.1-k3s1
 
 ports:
   # APP TRAFFIC: Map Codespace 8080 -> k3d LoadBalancer Port 80. This Load Balancer sits in front of the 3 node cluster.
@@ -24,8 +24,23 @@ options:
   k3d:
     wait: true # Don't return until the cluster is ready
     timeout: "60s"
-  k3s:
-    extraArgs:
-      - arg: --disable=traefik # Disabled the default traefik ingress. Install own CNI/Ingress later.
-        nodeFilters:
-          - server:*
+    
+files:
+  # Place the Gateway API CRDs
+  - source: https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.5.1/standard-install.yaml
+    destination: /var/lib/rancher/k3s/server/manifests/00-gateway-crds.yaml   
+  
+  # Inline Traefik v3 Config to enable Gateway API.
+  - source: |
+      apiVersion: helm.cattle.io/v1
+      kind: HelmChartConfig
+      metadata:
+        name: traefik
+        namespace: kube-system
+      spec:
+        valuesContent: |-
+          providers:
+            kubernetesGateway:
+              enabled: true
+ 
+    destination: /var/lib/rancher/k3s/server/manifests/01-traefik-gateway.yaml
