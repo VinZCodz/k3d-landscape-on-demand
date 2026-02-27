@@ -1,4 +1,5 @@
-.cluster-token.txt # K3d Cluster Tokens
+# K3d Cluster Tokens
+.cluster-token.txt 
 
 node_modules
 
@@ -18,6 +19,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # dotenv environment variable files
 .env
+*.env
 *.env.*
 
 # caches
@@ -36,4 +38,3 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 *.db-journal
 *.db-shm
 *.db-wal
-
