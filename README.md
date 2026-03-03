@@ -1,88 +1,78 @@
-# 🏗️ k3d-landscape-on-demand
+# 🏗️ k3d-cluster-on-demand
 
 **Instant 3-node Kubernetes (k3d) cluster inside your GitHub Codespaces.**
 
 ## ⚡ Quick Start
 
-- Press ```,``` (comma) on this repo --> Click ```Create new codespace``` 
+- Should be Logged into Github —> Press ```,``` (comma) on this repo —> Click ```Create new codespace```
 
-_Boom! Your cluster is ready in minutes on Port 9090._
-
-_That all!_
-
-<p align="center">
-<img width="509" height="71" alt="image" src="https://github.com/user-attachments/assets/a702adef-e832-4cf7-a77d-b9513a7fcd1a" />
-</p>
-
-
-Stop wasting time on local setup. A fully functional, multi-node cluster with a pre-configured UI in minutes. Done with your work? "throw-it-away"! Delete the codespace! clean, hassle free, optimized for the **GitHub free tier**, standard 2 core offering!
-
-<img width="1000" height="348" alt="image" src="https://github.com/user-attachments/assets/42d92a6f-c914-4294-8a38-773605b065c5" />
+_Boom! Your cluster is ready in minutes! GUI on Port 9090._
 
 ## 🎨 Visual Landscape (Headlamp UI)
 
-No squinting at ```kubectl get pods``` You have a fully integrated Headlamp UI! live.
+- UI is ready! Just goto the ```Ports``` tab and click ```Open in Browser 🌐``` at Port 9090. (Refresh browser to configure and load)
+- UI should ask for Login token! Find them at ```.cluster-token.txt``` in root.
+  
+## 🚀 Deploy your "Hello World" App in 30 Seconds inside cluster!
 
-- Access: Go to the ```Ports``` tab in your Codespace and click ```Open in Browser 🌐``` at Port 9090.
-  
-  <img width="1000" height="166" alt="image" src="https://github.com/user-attachments/assets/362162b6-4f28-4f90-a2ba-b05bab69a9ab" />
-  (Wait or Refresh for Headlamp UI to configure and load.)
-  
-- Secure Auth: I've used secure tokens with RBAC. Find the UI login token at ```.cluster-token.txt``` in root, valid for 24-hrs. If your token expires or you missed it, just run:
+- Deploy the Demo App from examples ```kubectl apply -f examples/all-in-one.yaml```
+- Check Running pods ```kubectl get pods``` 
+- Head to Port 8080 via Ports tab.
 
-```
-kubectl create token headlamp-admin -n headlamp --duration=24h > .cluster-token.txt
-cat .cluster-token.txt
-```
-- Features: Real-time visual cues, built-in pod exec, and cluster-wide insights, packaged offered by Headlamp UI.
-  
-  <img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/5e443249-18a3-4ead-8af9-c0af0ab2370a" />
+_Done! You wasted no time on local setup. You've a fully working Multi-Node cluster, up and running!_
+
+<img width="1000" height="701" alt="image" src="https://github.com/user-attachments/assets/4d8a1101-bd4d-43df-a042-a28e79242f39" />
+
+## 🎯 Why this Template?
+
+- ```Zero-Config```: Skip the hassel of manual setup. Just get to your work!
+- ```Modern Networking```: Pre-loaded with the Kubernetes Gateway API (the successor to Ingress).
+- ```Helm Ready```: Native support for Helm charts to deploy your apps instantly, remote!
+- ```Visual-First, GUI```: Headlamp UI Dashboard pre-configured to see your "breathing" pods live, with Secure Auth RBAC!
+- ```Free```: Codespace is free upto $10 per month! Enough to play around and implement something cool in the cluster.
+- ```Resource Lite```: Fine-tuned to run smoothly on GitHub's 2-core / 8GB RAM basic Free tier.
+- ```Zero-Footprint```: No local install, no junk, no risk. Delete when done.
+- ```Fully Open```: No black boxes. Leverage IaC-powered open-source infrastructure you can customize and control.
+- ```Dogfooding```: I built this to host my own backend services and experiments!
+
+<p align="center">
+  <img width="900" height="78" alt="image" src="https://github.com/user-attachments/assets/915c89e6-3a4f-4fb0-8553-f219c66b4008" />
+</p>
 
 
 ## 🛠️ Handy Commands
 
 The default cluster name is ```vinzcodz-cluster``` 
-<p align="center">
-  <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/d9cc74ab-2e72-4bef-8e4b-e28388aea5d0" />
-</p>
+
 Use these to manage your environment:
 
 - Stop Cluster: ```k3d cluster stop vinzcodz-cluster```
 
 - Start Cluster: ```k3d cluster start vinzcodz-cluster```
 
-_Then, regular ```kubectl get nodes``` and all other ```kubectl```..._
+- If your token expires or you missed it, just run:
 
+```
+kubectl create token headlamp-admin -n headlamp --duration=24h > .cluster-token.txt
+cat .cluster-token.txt
+```
 
-## 🎯 Why use this?
-<p align="center">
-<img width="400" height="39" alt="image" src="https://github.com/user-attachments/assets/4eea9fb7-6a13-4d62-8ad7-58ffbebc3df9" />
-</p>
-
-- Dogfooding: I built this to host my own backend services and experiments, with 2-Core minimal offering, which is Free tier for any codespace!
-
-- Zero Footprint: Nothing is installed on your laptop. Use it, experiment, and delete the Codespace when done. No security worries, no leftover junk.
-
-- Fully Open: Unlike "black box" solutions, everything here is open-source and extensible via IaC. Build your infra on top of this! or extend!
-
-- Helm Ready: Native support for Helm charts to deploy your apps instantly, remote!
-
-- Work in Progress: I haven't added Nginx Load Balancer support yet, but improvements are already underway!
+## 🌟 Support the Project
+If this one-click setup saved you hassles of YAML-wrangling today, please:
+- Star this repo to help others find it! ⭐️
+- Fork it and build your own Gateway API experiments. 🍴
+- Share it on [LinkedIn & tag me!](https://www.linkedin.com/in/vinay-hm/)  🐦
 
 ## 🤝 Contribute & Support
-
-Found a bug? Nothing is perfect! Please report it or raise a PR—I’ll review it as soon as possible.
-
-If this helped your workflow, feel free to **Star ⭐ and Fork 🍴** the repo to show your support!
-
----
-
-**Use for Dev | Test | CI/CD Actions | Practice | Basically a throw away cluster after use!**
+Found a bug or have a better way to optimize for 2-core machines? Open an Issue or submit a Pull Request. Let's make the "Instant K8s" experience even faster together!
 
 ---
 
 <p align="center">
-<img width="400" height="100" alt="image" src="https://github.com/user-attachments/assets/623c8884-bf88-4bac-9c6a-3410abc6a8d0" />
+  Use for Dev | Test | CI/CD Actions | Practice | Basically a throw away cluster after use!
+  <img width="400" height="80" alt="image" src="https://github.com/user-attachments/assets/026811f7-e209-4062-b3bf-c7aa3255cf02" />
 </p>
-
-_Go ahead, give it a spin! 🚀_
+<p align="center">
+  Go ahead, give it a spin! 🚀
+</p>
+  
