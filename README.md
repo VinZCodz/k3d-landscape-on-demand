@@ -34,7 +34,7 @@ North-South traffic is managed through the Kubernetes Gateway API, which is enab
 ## 🚀 Deploy "Hello World" Demo App in 30 sec inside cluster! (Optional)
 
 - Deploy ```kubectl apply -f examples/all-in-one.yaml```
-- Check Running pods ```kubectl get pods``` & Head to ```Port 8080```. Hello World!
+- Check Running pods ```kubectl get pods -n kube-system``` & Head to ```Port 8080```. Hello World!
 - **Important!** Delete when done ```kubectl delete -f examples/all-in-one.yaml``` to free the port for your app use.
   
 ## 🎯 Why this Template?
