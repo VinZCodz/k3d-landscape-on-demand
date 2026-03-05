@@ -2,10 +2,6 @@
 
 **Instant 3-node Kubernetes (k3d) cluster inside your GitHub Codespaces.**
 
-<p align="center">
-<img width="400" height="100" alt="image" src="https://github.com/user-attachments/assets/6ad9a1cc-f020-49d3-bc4e-5976480fff28" />
-</p>
-
 ## ⚡ Quick Start
 
 - Should be Logged into Github —> Press ```,``` (comma) on this repo —> Click ```Create new codespace```
@@ -23,8 +19,6 @@ _Boom! Your cluster is ready in minutes! GUI on Port 9090._
 
 _Done! You wasted NO time on local setup. You've a fully working Multi-Node cluster, up and running!_
 <p align="center">
-  <img width="900" height="200" alt="image" src="https://github.com/user-attachments/assets/70c1dde7-9526-4c72-91ba-4c018111e191" />
-
   <img width="900" height="701" alt="image" src="https://github.com/user-attachments/assets/4d8a1101-bd4d-43df-a042-a28e79242f39" />
 </p>
 
