@@ -1,0 +1,14 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: vinzcodz-gateway # Change name and use the same for your routes.
+  namespace: kube-system
+spec:
+  gatewayClassName: traefik
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 8000 # Traefik's default internal port
+      allowedRoutes:
+        namespaces:
+          from: All
