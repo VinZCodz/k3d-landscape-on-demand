@@ -1,3 +1,7 @@
+<p align="center">
+  <a href='https://codespaces.new/VinZCodz/k3d-cluster-on-demand'><img src='https://github.com/codespaces/badge.svg' alt='Open in GitHub Codespaces' style='max-width: 100%;'></a>
+</p>
+
 # 🏗️ k3d-cluster-on-demand
 
 **Instant 3-node Kubernetes (k3d) cluster inside your GitHub Codespaces.**
